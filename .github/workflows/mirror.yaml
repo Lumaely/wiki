@@ -1,0 +1,26 @@
+name: Mirror to School Repository
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    if: github.repository == 'Lumaely/wiki'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Push Mirror to School Org
+        env:
+          SCHOOL_PAT: ${{ secrets.SCHOOLPAT }}
+        run: |
+          git push --mirror --prune https://${SCHOOL_PAT}@github.com/EpitechPGE3-2025/G-EIP-601-ALL-6-1-eip-40.git
