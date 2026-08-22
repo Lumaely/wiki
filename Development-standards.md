@@ -1,5 +1,5 @@
 > [!NOTE]
-> Code standard may appear as the project goes, but none is set for now.
+> Code standard will appear as the project goes, but none is set for now.
 
 # VCS Workflow
 
