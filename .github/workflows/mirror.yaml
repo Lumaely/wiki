@@ -23,4 +23,4 @@ jobs:
         env:
           SCHOOL_PAT: ${{ secrets.SCHOOLPAT }}
         run: |
-          git push --mirror --prune https://${SCHOOL_PAT}@github.com/EpitechPGE3-2025/G-EIP-601-ALL-6-1-eip-40.git
+          git push --force https://${SCHOOL_PAT}@github.com/EpitechPGE3-2025/G-EIP-601-ALL-6-1-eip-40.wiki.git HEAD:master --tags
